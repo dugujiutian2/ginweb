@@ -3,7 +3,7 @@ info:
   contact: {}
   description: 测试
   license: {}
-  title: 测试
+  title: 测试gin服务
   version: 0.0.1
 paths:
   /record/{some_id}:

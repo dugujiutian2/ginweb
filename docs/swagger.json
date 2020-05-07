@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "description": "测试",
-        "title": "测试",
+        "title": "测试gin服务",
         "contact": {},
         "license": {},
         "version": "0.0.1"
