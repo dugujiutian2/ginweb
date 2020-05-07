@@ -1,10 +1,10 @@
 package main
 
 import (
-	_ "ginweb/docs"
-	"ginweb/log"
-	"ginweb/middleware"
 	"github.com/gin-gonic/gin"
+	_ "github.com/hero1s/ginweb/docs"
+	"github.com/hero1s/ginweb/log"
+	"github.com/hero1s/ginweb/middleware"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	"net/http"
@@ -16,11 +16,12 @@ import (
 // @BasePath /api/v1/
 func main() {
 
-	log.InitLog("dev","logs")
+	log.InitLog("dev", "logs")
 
 	r := gin.New()
 	//开启中间件记录日志
 	r.Use(middleware.LoggerToFile())
+	r.Use(gin.Recovery())
 
 	// 创建路由组
 	v1 := r.Group("/api/v1")
@@ -33,6 +34,7 @@ func main() {
 
 	r.Run()
 }
+
 // @title 测试
 // @获取指定ID记录
 // @Description get record by ID
