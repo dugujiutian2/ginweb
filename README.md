@@ -14,3 +14,8 @@
 12:task  
 13:config      
 14:RPC  
+
+安装swag命令    
+go get github.com/swaggo/swag/cmd/swag  
+项目根目录里执行swag init，生成docs/docs.go；访问http://localhost:8080/swagger/index.html 
+
