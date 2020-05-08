@@ -3,7 +3,7 @@ package utils
 import (
 	"github.com/go-redis/redis"
 	"github.com/hero1s/ginweb/log"
-	"github.com/hero1s/ginweb/utils/uuid"
+	"github.com/hero1s/ginweb/pkg/utils/uuid"
 	"strconv"
 )
 

@@ -16,3 +16,5 @@ require (
 	github.com/swaggo/swag v1.6.5
 	google.golang.org/appengine v1.6.6 // indirect
 )
+
+replace github.com/astaxie/beego v1.12.0 => github.com/nicle-lin/beego v1.12.7
