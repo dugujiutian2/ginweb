@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/go-redis/redis"
-	"github.com/hero1s/ginweb/log"
+	"github.com/hero1s/ginweb/pkg/log"
 	"io"
 	"sync"
 	"sync/atomic"

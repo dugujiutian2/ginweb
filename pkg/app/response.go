@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/hero1s/ginweb/i18n"
-	"github.com/hero1s/ginweb/log"
+	"github.com/hero1s/ginweb/pkg/log"
 	"github.com/hero1s/ginweb/pkg/validation"
 	"net/http"
 	"strconv"

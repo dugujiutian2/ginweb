@@ -4,7 +4,7 @@ import (
 	"crypto/md5"
 	"encoding/json"
 	"fmt"
-	"github.com/hero1s/ginweb/log"
+	"github.com/hero1s/ginweb/pkg/log"
 	"math/rand"
 	"net"
 	"runtime/debug"

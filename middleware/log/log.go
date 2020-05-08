@@ -1,8 +1,8 @@
-package middleware
+package log
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/hero1s/ginweb/log"
+	"github.com/hero1s/ginweb/pkg/log"
 	"time"
 )
 

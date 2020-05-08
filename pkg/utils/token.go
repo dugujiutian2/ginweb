@@ -6,7 +6,7 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/dgrijalva/jwt-go/request"
 	"github.com/hero1s/ginweb/i18n"
-	"github.com/hero1s/ginweb/log"
+	"github.com/hero1s/ginweb/pkg/log"
 	"net/http"
 	"time"
 )

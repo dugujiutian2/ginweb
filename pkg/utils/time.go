@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"github.com/hero1s/ginweb/db"
+	"github.com/hero1s/ginweb/pkg/db"
 	"math"
 	"time"
 )
