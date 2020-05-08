@@ -7,7 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/hero1s/ginweb/i18n"
 	"github.com/hero1s/ginweb/log"
-	"github.com/hero1s/ginweb/pkg/utils"
 	"github.com/hero1s/ginweb/pkg/validation"
 	"net/http"
 	"strconv"
@@ -131,15 +130,5 @@ func (g *Gin) ValidParams(p interface{}) bool {
 	return true
 }
 
-// 校验token是否有效，及获取uid
-func (g *Gin) ValidateToken() {
-	m, err := utils.DecodeToken(g.C.Request)
-	if err != nil {
-		g.ResponseError(err)
-		g.C.Abort()
-		return
-	}
-	g.Uid = m.Uid
-	g.DeviceId = m.UserData
-}
+
 
