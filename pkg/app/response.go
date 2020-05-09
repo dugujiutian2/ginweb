@@ -69,6 +69,15 @@ func (g *Gin) ResponseOk(err error, data interface{}) {
 	return
 }
 
+func (g *Gin) ResponseMsg(code, msg string, data interface{}) {
+	g.C.JSON(http.StatusOK, response{
+		Code: code,
+		Msg:  msg,
+		Data: data,
+	})
+	return
+}
+
 func (g *Gin) ResponseSuccess(data interface{}) {
 	g.C.JSON(http.StatusOK, response{
 		Code: i18n.Success.Error(),
@@ -129,6 +138,3 @@ func (g *Gin) ValidParams(p interface{}) bool {
 	}
 	return true
 }
-
-
-

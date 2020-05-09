@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	_ "github.com/hero1s/ginweb/docs"
-	"github.com/hero1s/ginweb/middleware/cors"
-	log2 "github.com/hero1s/ginweb/middleware/log"
+	"github.com/hero1s/ginweb/middleware"
+	"github.com/hero1s/ginweb/pkg/db"
 	"github.com/hero1s/ginweb/pkg/log"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
@@ -18,12 +18,14 @@ import (
 func main() {
 
 	log.InitLog("dev", "logs")
+	db.InitDB("","","","","",true,0,log.DefaultLog,200,200)
 
 	r := gin.New()
 	//开启中间件记录日志
-	r.Use(log2.LoggerToFile())
-	r.Use(gin.Recovery())
-	r.Use(cors.Cors())
+	r.Use(middleware.LoggerToFile)
+	r.Use(middleware.RecoverHandler)
+	r.Use(middleware.Cors)
+	r.Use(middleware.JWT)
 
 	// 创建路由组
 	v1 := r.Group("/api/v1")

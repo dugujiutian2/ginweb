@@ -24,4 +24,4 @@ require (
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 )
 
-replace github.com/astaxie/beego v1.12.0 => github.com/nicle-lin/beego v1.12.7
+replace github.com/astaxie/beego v1.12.1 => github.com/nicle-lin/beego v1.12.7
