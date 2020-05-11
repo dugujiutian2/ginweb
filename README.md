@@ -30,7 +30,8 @@ go get github.com/swaggo/swag/cmd/swag
 ```
 
 #### 数据库 Reverse
-
+工具自动生成方法:使用xorm工具 
+安装工具:go get github.com/go-xorm/cmd/xorm 
 ```bash
-xorm reverse mysql dbUserName:password@tcp(hostname:3306)/databaseName?charset=utf8 pkg/dbmodel/goxorm pkg/dbmodel
+xorm reverse mysql dbUserName:password@tcp(hostname:3306)/databaseName?charset=utf8 dbmodel/goxorm dbmodel
 ```

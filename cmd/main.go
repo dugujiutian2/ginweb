@@ -6,6 +6,7 @@ import (
 	_ "github.com/hero1s/ginweb/docs"
 	"github.com/hero1s/ginweb/middleware"
 	"github.com/hero1s/ginweb/pkg/db"
+	"github.com/hero1s/ginweb/pkg/db/orm"
 	"github.com/hero1s/ginweb/pkg/log"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
@@ -26,8 +27,8 @@ func main() {
 
 	db.InitDB("","","","","",true,0,log.DefaultLog,200,200)
 	// init Db
-/*	db := xorm.InitDB(conf.Conf.DB)
-	defer db.Close()*/
+	db := orm.InitDB(conf.Conf.DB)
+	defer db.Close()
 
 	r := gin.New()
 	//开启中间件记录日志
