@@ -19,3 +19,18 @@
 go get github.com/swaggo/swag/cmd/swag  
 项目根目录里执行swag init，生成docs/docs.go；访问http://localhost:8080/swagger/index.html 
 
+#### 运行参数：
+
+-env 可选，根据配置文件而定
+* prod
+* test
+
+```bash
+-env prod -conf cmd/web_template.json
+```
+
+#### 数据库 Reverse
+
+```bash
+xorm reverse mysql dbUserName:password@tcp(hostname:3306)/databaseName?charset=utf8 pkg/dbmodel/goxorm pkg/dbmodel
+```
