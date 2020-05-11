@@ -13,6 +13,7 @@ require (
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-redis/redis v6.15.7+incompatible
 	github.com/go-sql-driver/mysql v1.4.1
+	github.com/google/uuid v1.1.1 // indirect
 	github.com/howeyc/fsnotify v0.9.0
 	github.com/onsi/ginkgo v1.12.0 // indirect
 	github.com/onsi/gomega v1.10.0 // indirect
@@ -21,7 +22,9 @@ require (
 	github.com/spf13/viper v1.7.0
 	github.com/swaggo/gin-swagger v1.2.0
 	github.com/swaggo/swag v1.6.5
+	github.com/xinliangnote/go-util v0.0.0-20200323134426-527984dc34bf
 	github.com/zheng-ji/goSnowFlake v0.0.0-20180906112711-fc763800eec9
+	golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
 	google.golang.org/appengine v1.6.6 // indirect
 	gopkg.in/fatih/set.v0 v0.2.1
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22

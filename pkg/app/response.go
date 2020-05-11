@@ -5,17 +5,13 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin/binding"
 	"github.com/hero1s/ginweb/i18n"
 	"github.com/hero1s/ginweb/pkg/log"
 	"github.com/hero1s/ginweb/pkg/validation"
 	"net/http"
 	"strconv"
 )
-
-type BaseUserInfo struct {
-	Uid      uint64
-	DeviceId string
-}
 
 // 返回给前端的数据格式
 type Response struct {
@@ -48,7 +44,6 @@ func (r Response) MarshalJSON() ([]byte, error) {
 
 type Gin struct {
 	C *gin.Context
-	BaseUserInfo
 }
 
 func (g *Gin) Response(httpCode int, err error, data interface{}) {
@@ -137,4 +132,12 @@ func (g *Gin) ValidParams(p interface{}) bool {
 		}
 	}
 	return true
+}
+
+func (g *Gin) Bind(s interface{}) (interface{}, error) {
+	b := binding.Default(g.C.Request.Method, g.C.ContentType())
+	if err := g.C.ShouldBindWith(s, b); err != nil {
+		return nil, err
+	}
+	return s, nil
 }
