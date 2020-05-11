@@ -8,6 +8,12 @@
       "SleepWindow": 2000,
       "ErrorPercentThreshold": 50
     },
+    "DB": {
+      "Driver": "mysql",
+      "Dsn": "jerry:IloveJerry2019!@tcp(172.19.146.41:3306)/bilibili_comic?timeout=2s&readTimeout=5s&writeTimeout=5s&parseTime=true&loc=Local&charset=utf8,utf8mb4",
+      "ShowSQL": true,
+      "Idle": 20
+    },
     "HttpServer": {
       "Port": ":8080"
     }
@@ -20,6 +26,12 @@
       "RequestVolumeThreshold": 20,
       "SleepWindow": 2000,
       "ErrorPercentThreshold": 50
+    },
+    "DB": {
+      "Driver": "mysql",
+      "Dsn": "jerry:IloveJerry2019!@tcp(172.19.146.41:3306)/bilibili_comic?timeout=2s&readTimeout=5s&writeTimeout=5s&parseTime=true&loc=Local&charset=utf8,utf8mb4",
+      "ShowSQL": true,
+      "Idle": 20
     },
     "HttpServer": {
       "Port": ":8080"

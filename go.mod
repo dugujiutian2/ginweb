@@ -25,6 +25,7 @@ require (
 	google.golang.org/appengine v1.6.6 // indirect
 	gopkg.in/fatih/set.v0 v0.2.1
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
+	xorm.io/xorm v0.8.1
 )
 
 replace github.com/astaxie/beego v1.12.1 => github.com/nicle-lin/beego v1.12.7

@@ -18,6 +18,7 @@ var (
 type Config struct {
 	ProjectName string
 	Hystrix     *Hystrix
+	DB          *DB
 	HttpServer  *HttpServer
 }
 
@@ -32,6 +33,13 @@ type Hystrix struct {
 	RequestVolumeThreshold int // 开启熔断探测前的调用次数
 	SleepWindow            int // 熔断发生后的等待恢复时间
 	ErrorPercentThreshold  int // 错误百分比，请求数量大于等于RequestVolumeThreshold并且错误率到达这个百分比后就会启动熔断 默认值是50
+}
+
+type DB struct {
+	Driver  string
+	Dsn     string
+	Idle    int
+	ShowSQL bool
 }
 
 type HttpServer struct {

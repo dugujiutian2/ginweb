@@ -25,6 +25,9 @@ func main() {
 	}
 
 	db.InitDB("","","","","",true,0,log.DefaultLog,200,200)
+	// init Db
+/*	db := xorm.InitDB(conf.Conf.DB)
+	defer db.Close()*/
 
 	r := gin.New()
 	//开启中间件记录日志
