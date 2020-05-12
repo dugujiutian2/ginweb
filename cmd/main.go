@@ -13,7 +13,7 @@ import (
 
 // @title gin服务框架测试
 // @version 0.0.1
-// @description  测试doc
+// @description  测试文档
 // @BasePath /api/v1/
 func main() {
 	log.InitLog("dev", "logs")
@@ -39,7 +39,7 @@ func main() {
 	v1 := r.Group("/api/v1")
 
 	v1.GET("/record/:userId", record)
-
+	v1.GET("/record2/:userId", record2)
 	// 文档界面访问URL
 	// http://127.0.0.1:8080/swagger/index.html
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
@@ -47,9 +47,21 @@ func main() {
 	r.Run(conf.Conf.HttpServer.Port)
 }
 
+// @Summary 测试中文注解2
+// @Description 根据用户ID获取信息2
+// @Tags 测试分组2
+// @Accept  json
+// @Produce json
+// @Param   some_id     path    int     true        "用户ID"
+// @Success 200 {string} string	"ok"
+// @Router /record2/{some_id} [get]
+func record2(c *gin.Context) {
+	c.String(http.StatusOK, "ok")
+}
+
 // @Summary 测试中文注解
 // @Description 根据用户ID获取信息
-// @Tags Test
+// @Tags 测试分组
 // @Accept  json
 // @Produce json
 // @Param   some_id     path    int     true        "用户ID"
@@ -58,39 +70,4 @@ func main() {
 func record(c *gin.Context) {
 	c.String(http.StatusOK, "ok")
 }
-
-/*func studentById(c *gin.Context) error {
-	pId := c.Query("id")
-	if pId == "" {
-		return (c, nil, ecode.RequestErr)
-	}
-	id, err := strconv.Atoi(pId)
-	if err != nil {
-		return JSON(c, nil, ecode.RequestErr)
-	}
-
-	hystrix.Do(config.ProjectName, func() error {
-		rsp, err := schoolSrv.StudentById(id)
-		if err == nil {
-			JSON(c, rsp, nil)
-		}
-		return err
-	}, func(e error) error {
-		switch e {
-		case hystrix.ErrCircuitOpen:
-			fmt.Println("studentList 熔断开启:", e)
-			JSON(c, nil, ecode.New(502, "熔断开启"))
-		case hystrix.ErrMaxConcurrency:
-			fmt.Println("studentList 熔断超过最大并发:", e)
-			JSON(c, nil, ecode.New(502, "熔断超过最大并发"))
-		case hystrix.ErrTimeout:
-			fmt.Println("studentList 熔断超时:", e)
-			JSON(c, nil, ecode.New(502, "熔断超时"))
-		default:
-			JSON(c, nil, e)
-		}
-		return e
-	})
-	return nil
-}*/
 

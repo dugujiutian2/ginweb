@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "测试doc",
+        "description": "测试文档",
         "title": "gin服务框架测试",
         "contact": {},
         "license": {},
@@ -19,9 +19,41 @@
                     "application/json"
                 ],
                 "tags": [
-                    "Test"
+                    "测试分组"
                 ],
                 "summary": "测试中文注解",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "用户ID",
+                        "name": "some_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/record2/{some_id}": {
+            "get": {
+                "description": "根据用户ID获取信息2",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "测试分组2"
+                ],
+                "summary": "测试中文注解2",
                 "parameters": [
                     {
                         "type": "integer",
