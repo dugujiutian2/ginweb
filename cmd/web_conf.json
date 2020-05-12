@@ -12,7 +12,9 @@
       "Driver": "mysql",
       "Dsn": "jerry:IloveJerry2019!@tcp(172.19.146.41:3306)/bilibili_comic?timeout=2s&readTimeout=5s&writeTimeout=5s&parseTime=true&loc=Local&charset=utf8,utf8mb4",
       "ShowSQL": true,
-      "Idle": 20
+      "Idle": 20,
+      "LogFile": "log/sql_log.txt",
+      "LogLevel":1
     },
     "HttpServer": {
       "Port": ":8080"
@@ -31,7 +33,9 @@
       "Driver": "mysql",
       "Dsn": "jerry:IloveJerry2019!@tcp(172.19.146.41:3306)/bilibili_comic?timeout=2s&readTimeout=5s&writeTimeout=5s&parseTime=true&loc=Local&charset=utf8,utf8mb4",
       "ShowSQL": true,
-      "Idle": 20
+      "Idle": 20,
+      "LogFile": "log/sql_log.txt",
+      "LogLevel": 1
     },
     "HttpServer": {
       "Port": ":8080"

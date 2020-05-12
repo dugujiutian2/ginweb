@@ -36,10 +36,12 @@ type Hystrix struct {
 }
 
 type DB struct {
-	Driver  string
-	Dsn     string
-	Idle    int
-	ShowSQL bool
+	Driver   string
+	Dsn      string
+	Idle     int
+	ShowSQL  bool
+	LogFile  string
+	LogLevel int
 }
 
 type HttpServer struct {
