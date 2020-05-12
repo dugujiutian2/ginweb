@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "测试",
-        "title": "测试gin服务",
+        "description": "测试doc",
+        "title": "gin服务框架测试",
         "contact": {},
         "license": {},
         "version": "0.0.1"
@@ -11,17 +11,21 @@
     "paths": {
         "/record/{some_id}": {
             "get": {
-                "description": "get record by ID",
+                "description": "根据用户ID获取信息",
                 "consumes": [
                     "application/json"
                 ],
                 "produces": [
                     "application/json"
                 ],
+                "tags": [
+                    "Test"
+                ],
+                "summary": "测试中文注解",
                 "parameters": [
                     {
                         "type": "integer",
-                        "description": "userId",
+                        "description": "用户ID",
                         "name": "some_id",
                         "in": "path",
                         "required": true

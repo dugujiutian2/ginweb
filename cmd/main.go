@@ -5,17 +5,15 @@ import (
 	"github.com/hero1s/ginweb/conf"
 	_ "github.com/hero1s/ginweb/docs"
 	"github.com/hero1s/ginweb/middleware"
-	"github.com/hero1s/ginweb/pkg/db"
-	"github.com/hero1s/ginweb/pkg/db/orm"
 	"github.com/hero1s/ginweb/pkg/log"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	"net/http"
 )
 
-// @title 测试gin服务
+// @title gin服务框架测试
 // @version 0.0.1
-// @description  测试
+// @description  测试doc
 // @BasePath /api/v1/
 func main() {
 	log.InitLog("dev", "logs")
@@ -25,17 +23,17 @@ func main() {
 		log.Error("解析配置文件错误:%+v",err)
 	}
 
-	db.InitDB("","","","","",true,0,log.DefaultLog,200,200)
+/*	db.InitDB("","","","","",true,0,log.DefaultLog,200,200)
 	// init Db
 	db := orm.InitDB(conf.Conf.DB)
-	defer db.Close()
+	defer db.Close()*/
 
 	r := gin.New()
 	//开启中间件记录日志
 	r.Use(middleware.LoggerToFile)
 	r.Use(middleware.RecoverHandler)
 	r.Use(middleware.Cors)
-	r.Use(middleware.JWT)
+	//r.Use(middleware.JWT)
 
 	// 创建路由组
 	v1 := r.Group("/api/v1")
@@ -49,12 +47,12 @@ func main() {
 	r.Run(conf.Conf.HttpServer.Port)
 }
 
-// @title 测试
-// @获取指定ID记录
-// @Description get record by ID
+// @Summary 测试中文注解
+// @Description 根据用户ID获取信息
+// @Tags Test
 // @Accept  json
 // @Produce json
-// @Param   some_id     path    int     true        "userId"
+// @Param   some_id     path    int     true        "用户ID"
 // @Success 200 {string} string	"ok"
 // @Router /record/{some_id} [get]
 func record(c *gin.Context) {

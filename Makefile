@@ -22,3 +22,6 @@ run:
 stop:
 	pkill -f target/web
 
+doc:
+	swag init -g cmd/main.go
+
