@@ -36,8 +36,10 @@ type Hystrix struct {
 }
 
 type DB struct {
-	Driver   string
-	Dsn      string
+	UserName string
+	Passwd   string
+	Host     string
+	Schema   string
 	Idle     int
 	ShowSQL  bool
 	LogFile  string
