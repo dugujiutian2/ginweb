@@ -9,10 +9,10 @@
       "ErrorPercentThreshold": 50
     },
     "DB": {
-      "user_name": "root",
-      "passwd": "e23456",
-      "host": "127.0.0.1",
-      "schema": "test",
+      "UserName": "root",
+      "Passwd": "e23456",
+      "Host": "192.168.1.162:3307",
+      "Schema": "test",
       "ShowSQL": true,
       "Idle": 20,
       "LogFile": "log/sql_log.txt",
@@ -32,8 +32,10 @@
       "ErrorPercentThreshold": 50
     },
     "DB": {
-      "Driver": "mysql",
-      "Dsn": "jerry:IloveJerry2019!@tcp(172.19.146.41:3306)/bilibili_comic?timeout=2s&readTimeout=5s&writeTimeout=5s&parseTime=true&loc=Local&charset=utf8,utf8mb4",
+      "UserName": "root",
+      "Passwd": "e23456",
+      "Host": "192.168.1.162:3307",
+      "Schema": "test",
       "ShowSQL": true,
       "Idle": 20,
       "LogFile": "log/sql_log.txt",

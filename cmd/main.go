@@ -5,6 +5,7 @@ import (
 	"github.com/hero1s/ginweb/conf"
 	_ "github.com/hero1s/ginweb/docs"
 	"github.com/hero1s/ginweb/middleware"
+	"github.com/hero1s/ginweb/pkg/db/orm"
 	"github.com/hero1s/ginweb/pkg/log"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
@@ -23,10 +24,10 @@ func main() {
 		log.Error("解析配置文件错误:%+v",err)
 	}
 
-/*	db.InitDB("","","","","",true,0,log.DefaultLog,200,200)
+	//db.InitDB("","","","","",true,0,log.DefaultLog,200,200)
 	// init Db
 	db := orm.InitDB(conf.Conf.DB)
-	defer db.Close()*/
+	defer db.Close()
 
 	r := gin.New()
 	//开启中间件记录日志

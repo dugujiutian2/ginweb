@@ -17,7 +17,7 @@ clean:
 	rm -rf target/
 
 run:
-	nohup target/web -env=test -conf=target/web_conf.json 2>&1 > target/web.log &
+	target/web -env=test -conf=target/web_conf.json 2>&1 > target/web.log
 
 stop:
 	pkill -f target/web
@@ -25,3 +25,5 @@ stop:
 doc:
 	swag init -g cmd/main.go
 
+run-back:
+	nohup target/web -env=test -conf=target/web_conf.json 2>&1 > target/web.log &
