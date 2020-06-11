@@ -27,3 +27,6 @@ doc:
 
 run-back:
 	nohup target/web -env=test -conf=target/web_conf.json 2>&1 > target/web.log &
+
+xorm-model:
+	xorm reverse mysql "root:e23456@tcp(192.168.1.162:3307)/test?charset=utf8" dbmodel/goxorm dbmodel
