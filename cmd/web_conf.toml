@@ -1,0 +1,24 @@
+
+ProjectName = "ginweb-test"
+#熔断配置
+[Hystrix]
+  Timeout = 1000
+  MaxConcurrentRequests = 500
+  RequestVolumeThreshold = 20
+  SleepWindow = 2000
+  ErrorPercentThreshold = 50
+#mysql
+[DB]
+  UserName = "root"
+  Passwd = "e23456"
+  Host = "192.168.1.162:3307"
+  Schema = "test"
+  ShowSQL = true
+  Idle = 20
+  LogFile = "log/sql_log.txt"
+  LogLevel = 1
+
+[HttpServer]
+  Port = ":8080"
+
+

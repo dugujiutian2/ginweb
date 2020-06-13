@@ -3,16 +3,16 @@ package conf
 import (
 	"flag"
 	"fmt"
-
+	"github.com/BurntSushi/toml"
 	"github.com/afex/hystrix-go/hystrix"
 	"github.com/pkg/errors"
-	"github.com/spf13/viper"
 )
 
 var (
 	env      string
 	filePath string
-	Conf     = &Config{}
+	// Conf config
+	Conf *Config
 )
 
 type Config struct {
@@ -20,6 +20,11 @@ type Config struct {
 	Hystrix     *Hystrix
 	DB          *DB
 	HttpServer  *HttpServer
+}
+
+// Default new a config with specified defualt value.
+func Default() *Config {
+	return &Config{}
 }
 
 func init() {
@@ -56,13 +61,8 @@ func ParseConfig() error {
 	if filePath == "" {
 		return errors.New("load conf path fail")
 	}
-	viper.SetConfigFile(filePath)
-	viper.SetConfigType("json")
-	err := viper.ReadInConfig()
-	if err != nil {
-		return err
-	}
-	err = viper.UnmarshalKey(env, Conf)
+	Conf = Default()
+	_, err := toml.DecodeFile(filePath, &Conf)
 	if err != nil {
 		return err
 	}

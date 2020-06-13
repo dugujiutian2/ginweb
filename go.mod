@@ -3,6 +3,7 @@ module github.com/hero1s/ginweb
 go 1.14
 
 require (
+	github.com/BurntSushi/toml v0.3.1
 	github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751
 	github.com/astaxie/beego v1.12.1
